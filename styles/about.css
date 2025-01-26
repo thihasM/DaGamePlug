@@ -1,0 +1,171 @@
+  body {
+    font-family: 'Courier New', monospace;
+    background-color: #fff;
+    color: black;
+  }
+  
+  header {
+    
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  
+  header h1 {
+    text-align: center;
+    font-size: 2.5rem;;
+
+  }
+  
+  header p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+
+  .branches {
+    margin: 0 10%;
+  }
+  
+  .branch {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .branch h3 {
+    color: #000;
+  }
+  
+  .branch p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .map {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
+  }
+  
+  .map iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+  
+
+  .images {
+    display: flex;
+    gap: 10px; 
+    justify-content: space-between; 
+  }
+  
+  .images img {
+    width: 48%; 
+    border-radius: 8px;
+    object-fit: cover; 
+  }
+  
+  .images img:last-child {
+    margin-right: 0;
+  }
+  
+  .summary-table {
+    margin: 20px 5%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: black;
+    color: white;
+  }
+  
+  tfoot td {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    
+  }
+  
+  .footer {
+    color: BLACK;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+ 
+  header h1 {
+      font-size: 1.8rem;
+  }
+
+  header p {
+      font-size: 0.9rem;
+  }
+
+ 
+  .branches {
+      margin: 0 2%;
+  }
+
+  .branch h3 {
+      font-size: 1rem;
+  }
+
+  .branch p {
+      font-size: 0.8rem;
+  }
+
+  
+  .map iframe {
+      height: 200px;
+  }
+
+  
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+  }
+
+  .images img {
+    width: 100%; 
+    height: auto; 
+  }
+
+ 
+  table {
+      font-size: 0.8rem;
+  }
+
+  th, td {
+      padding: 1%;
+  }
+
+ 
+  .footer {
+      font-size: 0.8rem;
+  }
+}

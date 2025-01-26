@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaGamePlug.com</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/faqs.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="./images/blacklogo.png"alt="Logo" class="logo-image"></a>
+        </div>
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="products.html">Products</a>
+                    <ul class="submenu">
+                        <li><a href="consoles.html">Consoles</a></li>
+                        <li><a href="gperipherals.html">Gaming Peripherals</a></li>
+                    </ul>
+                </li>
+                <li><a href="games.html">Games</a><li>
+                <li><a href="upcoming.html">Upcoming Games</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1>Queries and FAQ</h1>
+        <p>Find answers to common questions or ask your own below!</p>
+      </header>
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+    
+        <div class="faq-item">
+          <h3>Q: What are your store's opening hours?</h3>
+          <p>A: Our stores are open from 9:30 AM to 6:30 PM, Monday to Saturday and 11:00 AM to 5:00PM on sundays. </p>
+        </div>
+    
+        <div class="faq-item">
+          <h3>Q: Do you offer home delivery services?</h3>
+          <p>A: Yes, we provide home delivery services within a 20-mile radius of each store.</p>
+        </div>
+    
+        <div class="faq-item">
+          <h3>Q: What payment methods do you accept?</h3>
+          <p>A: We accept cash, credit/debit cards, and digital wallets like Google Pay and Apple Pay.</p>
+        </div>
+    
+        <div class="faq-item">
+          <h3>Q: Can I return or exchange items purchased?</h3>
+          <p>A: Yes, items can be returned or exchanged within 14 days of purchase with the original receipt.</p>
+        </div>
+      </section>
+      <section class="query-form">
+        <h2>Ask Your Question</h2>
+        <form action="submit-question.php" method="post">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="question">Your Question:</label>
+            <textarea id="question" name="question" rows="5" placeholder="Enter your question" required></textarea>
+          </div>
+          
+          <button type="submit">Submit Question</button>
+        </form>
+      </section>
+    
+      <footer class="footer">
+        <p>© 2024 Da Game Plug. All rights reserved.</p>
+    </footer>
+    </body>
+</html>

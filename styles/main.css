@@ -1,0 +1,469 @@
+
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #fff;
+    color: #000;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+    width: 150px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative; 
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.nav-menu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #000; 
+    color: #fff;
+    list-style: none;
+    padding: 5px 0;
+    border: 1px solid #ccc;
+    z-index: 10; 
+    width: max-content; 
+}
+
+.nav-menu .submenu li {
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.nav-menu .submenu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-menu .submenu li a:hover {
+    background-color: #333; 
+    display: block;
+}
+
+.nav-menu li:hover .submenu {
+    display: block; 
+    cursor: pointer;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh; 
+}
+
+
+.hero-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; 
+    height: 100%;
+    text-align: center;
+}
+
+.logo-image {
+    width: 250px; 
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 18px;
+    color: #000;
+    margin-top: 10px;
+}
+
+
+.welcome-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; 
+    color: #fff;
+    text-align: center;
+    height: 100%;
+}
+
+
+.welcome-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: black;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.learn-more-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 24px;
+}
+
+.featuredh2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%; 
+    white-space: nowrap; 
+    scroll-snap-type: x mandatory; 
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.featured-games {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+
+.featured-games h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.scrollable-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 4px;
+}
+
+.game-card {
+    flex: 0 0 350px;
+    background-color: black;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #fff;
+}
+
+.game-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    padding: 20px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.game-card:hover .game-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.game-description p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.view-more-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.special-deals {
+    margin: 30px 10px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.special-deals h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 4px;
+}
+
+.deal-card {
+    flex: 0 0 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.deal-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.deal-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.deal-card:hover .deal-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.deal-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+.footer {
+    color: BLACK;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-logo {
+        order: 2;
+    }
+
+    .welcome-text-container {
+        order: 1; 
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100px;
+    }
+
+    .nav-menu li {
+        margin: 5px 0;
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .scrollable-container {
+        gap: 10px;
+    }
+
+    .game-card,
+    .deal-card {
+        flex: 0 0 90%; 
+        margin: 0 auto;
+    }
+
+    .logo-image {
+        width: 120px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        font-size: 24px;
+    }
+
+    .learn-more-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .game-card img {
+        height: 200px; 
+    }
+
+    .deal-card img {
+        height: 150px; 
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
