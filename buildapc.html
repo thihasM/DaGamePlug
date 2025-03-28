@@ -6,6 +6,7 @@
         <title>DaGamePlug.com</title>
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/candg.css">
+        <script src="./js/product.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -31,47 +32,68 @@
             </nav>
          </header>
         <section id="parts" class="parts">
-            <h2 style="text-align: center; padding: 20px;">Build a PC</h2>
-            <p style="text-align: center; padding: 20px;">Build your own custom PC with the best parts available.</p>
-            <div class="grid">
-                <div class="item">
+            <h2 style="text-align: center; padding: 20px;">Processors</h2>
+            <p style="text-align: center; padding: 20px;">We carry the top of the Line AMD and Intel Processors.</p>
+            <div id="product-grid" class="grid">
+                <div class="item" data-product-id="1">
+                    <div class="cartbtn"></div>
                     <img src="./images/Ryzen9.jpg" alt="Ryzen 9">
                     <h3>AMD Ryzen™ 9 9950X3D</h3>
                     <div class="hover-content">
                         <p>Price: $823.81</p>
-                        <a href="ryzen9.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=1" class="btn-hover">View More</a>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="./images/IntelI9.jpg" alt="X870-A">
+                <div class="item"data-product-id="2">
+                    <img src="./images/Ryzen97900x.jpg" alt="Ryzen 97900">
+                    <h3>AMD Ryzen™ 9 7900</h3>
+                    <div class="hover-content">
+                        <p>Price: $447.78</p>
+                        <a href="prodpage.html?id=2" class="btn-hover">View More</a>
+                    </div>
+                </div>
+                <div class="item" data-product-id="3">
+                    <img src="./images/Ryzen97900x.jpg" alt="Ryzen 9700X">
+                    <h3>AMD Ryzen™ 9 7900X</h3>
+                    <div class="hover-content">
+                        <p>Price: $357.56</p>
+                        <a href="prodpage.html?id=3" class="btn-hover">View More</a>
+                    </div>
+                </div>
+                <div class="item" data-product-id="4">
+                    <img src="./images/IntelI9.jpg" alt="14900K">
                     <h3>Intel® Core™ i9 processor 14900K</h3>
                     <div class="hover-content">
                         <p>Price: $549.99</p>
-                        <a href="1tbssd.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=4" class="btn-hover">View More</a>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="./images/IntelI7.jpg" alt="X870-A">
+                <div class="item" data-product-id="5">
+                    <img src="./images/IntelI7.jpg" alt="14700K">
                     <h3>Intel® Core™ i7 processor 14700K</h3>
                     <div class="hover-content">
                         <p>Price: $409.99</p>
-                        <a href="1tbssd.html" class="btn-hover">View More</a>
-                    </div>
+                        <a href="prodpage.html?id=5" class="btn-hover">View More</a>                    </div>
                 </div>
-                <div class="item">
-                    <img src="./images/IntelI5.jpg" alt="X870-A">
+                <div class="item"   data-product-id="6">
+                    <img src="./images/IntelI5.jpg" alt="14600K">
                     <h3>Intel® Core™ i5 processor 14600K</h3>
                     <div class="hover-content">
                         <p>Price: $329.00</p>
-                        <a href="1tbssd.html" class="btn-hover">View More</a>
-                    </div>
+                        <a href="prodpage.html?id=6" class="btn-hover">View More</a>                    </div>
                 </div>
+            </div>
+        </section> 
+        <section id="parts" class="parts">
+            <h2 style="text-align: center; padding: 20px;">Graphic Cards</h2>
+            <p style="text-align: center; padding: 20px;">The Top of the line ASUS TUF Gaming Graphic cards</p>
+            <div class="grid">
                 <div class="item">
                     <img src="./images/TUFRTX5090.jpg" alt="RTX 5090">
                     <h3>ASUS TUF Gaming GeForce RTX™ 5090</h3>
                     <div class="hover-content">
                         <p>Price: $2759.00</p>
-                        <a href="rtx3080.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html" class="btn-hover">View More</a>
                     </div>
                 </div>
                 <div class="item">
@@ -79,7 +101,7 @@
                     <h3>ASUS TUF Gaming GeForce RTX™ 5080</h3>
                     <div class="hover-content">
                         <p>Price: $1487.99</p>
-                        <a href="rtx3080.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html" class="btn-hover">View More</a>
                     </div>
                 </div>
                 <div class="item">
@@ -87,15 +109,22 @@
                     <h3>ASUS TUF Gaming GeForce RTX™ 5070 Ti</h3>
                     <div class="hover-content">
                         <p>Price: $999.99</p>
-                        <a href="rtx3080.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html" class="btn-hover">View More</a>
                     </div>
                 </div>
+                
+            </div>
+        </section> 
+        <section id="parts" class="parts">
+            <h2 style="text-align: center; padding: 20px;">Mother Boards</h2>
+            <p style="text-align: center; padding: 20px;">Build your own custom PC with the best parts available.</p>
+            <div class="grid">
                 <div class="item">
                     <img src="./images/ROGCROSSHAIRX870EERO.jpg" alt="X870E ">
                     <h3>ROG CROSSHAIR X870E HERO</h3>
                     <div class="hover-content">
                         <p>Price: $699.99</p>
-                        <a href="16gbddr4.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html" class="btn-hover">View More</a>
                     </div>
                 </div>
                 <div class="item">
@@ -103,20 +132,18 @@
                     <h3>ROG STRIX X870-A GAMING WIFI</h3>
                     <div class="hover-content">
                         <p>Price: $369.99</p>
-                        <a href="1tbssd.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html" class="btn-hover">View More</a>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="./images/ROGB850.jpg" alt="X870-A">
+                    <img src="./images/ROGB850.jpg" alt="B850-A">
                     <h3>ROG STRIX B850-A GAMING WIFI</h3>
                     <div class="hover-content">
                         <p>Price: $269.99</p>
-                        <a href="1tbssd.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html" class="btn-hover">View More</a>
                     </div>
                 </div>
-                
             </div>
-        </section>
-           
+        </section>   
     </body>   
 </html>    

@@ -1,0 +1,97 @@
+/* General Styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem;
+    padding: 2rem;
+}
+
+h2, p {
+    font-size: 24px;
+    color: #333;
+}
+
+#parts {
+    padding: 20px;
+    background-color: #fff;
+}
+
+
+
+/* Product Card Styling */
+.item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.item h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.hover-content {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item:hover .hover-content {
+    display: block;
+}
+
+.item .hover-content p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.btn-hover {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hover:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #parts {
+        padding: 10px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
