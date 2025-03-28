@@ -9,7 +9,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
     gap: 2rem;
     padding: 2rem;
 }
@@ -89,5 +89,30 @@ body {
     .hero-section {
         grid-template-columns: 1fr; 
         text-align: center;
+    }
+}
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller tablets */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .image {
+        height: 150px;
     }
 }
