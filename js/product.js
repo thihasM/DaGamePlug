@@ -25,16 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // DOM update with null checks
             container.innerHTML = `
-                <div class="product-images">
-                    <img src="${product.image}" alt="${product.name}">
-                </div>
-                <div class="product-info">
-                    <h1>${product.name}</h1>
-                    <p class="price">$${product.price?.toFixed(2) || 'N/A'}</p>
-                    ${product.description ? `<div class="specs">${product.description}</div>` : ''}
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            `;
+    <div class="product-images">
+        <img src="${product.image}" alt="${product.name}">
+    </div>
+    <div class="product-info">
+        <h1>${product.name}</h1>
+        <p class="price">$${product.price?.toFixed(2) || 'N/A'}</p>
+                ${product.description ? `<p class="description">${product.description}</p>` : ''}
+        <div class="availability">
+            <p class="availability-status">${product.availability ? 'In Stock' : 'Out of Stock'}</p>
+        <div class="specs">
+            <h4>Specifications:</h4>
+            <ul>
+                ${Object.entries(product.specs).map(([key, value]) => `
+                    <li><strong>${key.replace(/_/g, ' ')}:</strong> ${value}</li>
+                `).join('')}
+            </ul>
+        </div>
+    </div>
+`;
             
             document.title = `${product.name} - DaGamePlug`;
         })
