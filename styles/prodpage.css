@@ -33,7 +33,13 @@ main {
     max-width: 800px;
     
 }
+.partshead{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
 
+}
 /* Product Grid */
 .grid {
     display: grid;
@@ -48,7 +54,7 @@ main {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: left;
+    text-align: center;
 }
 
 .product-images {
@@ -83,7 +89,7 @@ main {
     color: grey;
     line-height: 1.8;
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: center;
 }
 
 .specs {
