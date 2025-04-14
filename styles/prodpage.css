@@ -89,7 +89,7 @@ main {
     color: grey;
     line-height: 1.8;
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: left;
 }
 
 .specs {
@@ -113,6 +113,56 @@ main {
     margin-bottom: 0.5rem;
 }
 
+
+/* Cart Controls */
+.cart-controls {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+
+.cart-controls input {
+    width: 80px;
+    padding: 0.5rem;
+    background: #2d2d2d;
+    border: 1px solid black;
+    color: white;
+    border-radius: 4px;
+}
+
+.cart-controls button {
+    background: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.cart-controls button:hover {
+    background: #000;
+    color: #fff;
+}
+    
+/* Specs Table */
+.specs table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.specs td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.specs tr:last-child td {
+    border-bottom: none;
+}
 
 
 /* Loading and Error States */

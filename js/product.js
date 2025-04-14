@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
-    
-    // Verify critical elements exist first
     const container = document.getElementById('product-content');
+
     if (!container) {
         console.error('product-content element not found!');
         return;
@@ -23,34 +22,63 @@ document.addEventListener('DOMContentLoaded', () => {
             const product = products.find(p => p.id == productId);
             if (!product) throw new Error('Product not found');
 
-            // DOM update with null checks
+            // Build stock status HTML
+            const stockStatus = product.stock > 0 
+                ? `<p class="in-stock">In Stock (${product.stock} available)</p>` 
+                : `<p class="out-of-stock">Out of Stock</p>`;
+
+            // Build cart controls HTML
+            const cartControls = product.stock > 0
+                ? `<div class="cart-controls">
+                    <label>Quantity:</label>
+                    <input type="number" id="quantity" 
+                           min="1" 
+                           max="${product.stock}" 
+                           value="1">
+                    <button class="add-to-cart">Add to Cart</button>
+                   </div>`
+                : '<p class="out-of-stock">Temporarily Unavailable</p>';
+
             container.innerHTML = `
-    <div class="product-images">
-        <img src="${product.image}" alt="${product.name}">
-    </div>
-    <div class="product-info">
-        <h1>${product.name}</h1>
-        <p class="price">$${product.price?.toFixed(2) || 'N/A'}</p>
-                ${product.description ? `<p class="description">${product.description}</p>` : ''}
-        <div class="availability">
-            <p class="availability-status">${product.availability ? 'In Stock' : 'Out of Stock'}</p>
-        <div class="specs">
-            <h4>Specifications:</h4>
-            <ul>
-                ${Object.entries(product.specs).map(([key, value]) => `
-                    <li><strong>${key.replace(/_/g, ' ')}:</strong> ${value}</li>
-                `).join('')}
-            </ul>
-        </div>
-    </div>
-`;
-            
+                <div class="product-images">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h1>${product.name}</h1>
+                    ${stockStatus}
+                    <p class="price">$${product.price?.toFixed(2) || 'N/A'}</p>
+                    ${product.description ? `<p class="description">${product.description}</p>` : ''}
+                    ${cartControls}
+                    <div class="specs">
+                        <h4>Specifications:</h4>
+                        <table>
+                            ${Object.entries(product.specs).map(([key, value]) => `
+                                <tr>
+                                    <td>${key.replace(/_/g, ' ')}:</td>
+                                    <td>${value}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+                </div>
+            `;
+
+            // Proper event listener binding
+            const addToCartBtn = container.querySelector('.add-to-cart');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', () => {
+                    const quantity = parseInt(document.getElementById('quantity').value);
+                    if (quantity > 0) {
+                        addToCart(product.id, quantity);
+                        updateCartUI();
+                    }
+                });
+            }
+
             document.title = `${product.name} - DaGamePlug`;
         })
         .catch(error => {
             console.error('Error:', error);
-            if (container) {
-                container.innerHTML = `<p class="error">${error.message}</p>`;
-            }
+            container.innerHTML = `<p class="error">${error.message}</p>`;
         });
 });

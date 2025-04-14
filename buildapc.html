@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/candg.css">
         <script src="./js/product.js" defer></script>
+        <script src="./js/cart.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -28,6 +29,9 @@
                     <li><a href="games.html">Games</a><li>
                     <li><a href="upcoming.html">Upcoming Games</a></li>
                     <li><a href="faq.html">FAQs</a></li>
+                    <div class="cart-icon">
+                        <a href="cart.html">Cart <span id="cart-count">0</span></a>
+                    </div>
                 </ul>
             </nav>
          </header>
@@ -42,6 +46,9 @@
                     <div class="hover-content">
                         <p>Price: $823.81</p>
                         <a href="prodpage.html?id=1" class="btn-hover">View More</a>
+                        <div class="btn-hover" data-product-id="1">
+                            <button class="cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 <div class="item"data-product-id="2">
@@ -50,6 +57,7 @@
                     <div class="hover-content">
                         <p>Price: $447.78</p>
                         <a href="prodpage.html?id=2" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item" data-product-id="3">
@@ -58,6 +66,7 @@
                     <div class="hover-content">
                         <p>Price: $357.56</p>
                         <a href="prodpage.html?id=3" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item" data-product-id="4">
@@ -66,6 +75,7 @@
                     <div class="hover-content">
                         <p>Price: $549.99</p>
                         <a href="prodpage.html?id=4" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item" data-product-id="5">
@@ -73,14 +83,18 @@
                     <h3>Intel® Core™ i7 processor 14700K</h3>
                     <div class="hover-content">
                         <p>Price: $409.99</p>
-                        <a href="prodpage.html?id=5" class="btn-hover">View More</a>                    </div>
+                        <a href="prodpage.html?id=5" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a> 
+                    </div>
                 </div>
                 <div class="item"   data-product-id="6">
                     <img src="./images/IntelI5.jpg" alt="14600K">
                     <h3>Intel® Core™ i5 processor 14600K</h3>
                     <div class="hover-content">
                         <p>Price: $329.00</p>
-                        <a href="prodpage.html?id=6" class="btn-hover">View More</a>                    </div>
+                        <a href="prodpage.html?id=6" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>                  
+                    </div>
                 </div>
             </div>
         </section> 
@@ -93,7 +107,8 @@
                     <h3>ASUS TUF Gaming GeForce RTX™ 5090</h3>
                     <div class="hover-content">
                         <p>Price: $2759.00</p>
-                        <a href="prodpage.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=7" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -101,7 +116,8 @@
                     <h3>ASUS TUF Gaming GeForce RTX™ 5080</h3>
                     <div class="hover-content">
                         <p>Price: $1487.99</p>
-                        <a href="prodpage.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=8" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -109,10 +125,37 @@
                     <h3>ASUS TUF Gaming GeForce RTX™ 5070 Ti</h3>
                     <div class="hover-content">
                         <p>Price: $999.99</p>
-                        <a href="prodpage.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=9" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
-                
+                <div class="item">
+                    <img src="./images/4090.jpg" alt="RTX 4090">
+                    <h3>ASUS TUF Gaming GeForce RTX™ 4090 </h3>
+                    <div class="hover-content">
+                        <p>Price: $999.99</p>
+                        <a href="prodpage.html?id=10" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/Radeon9070XT.jpg" alt="Radeon 9070 XT">
+                    <h3>Radeon™ RX 9070 XT</h3>
+                    <div class="hover-content">
+                        <p>Price: $600.00</p>
+                        <a href="prodpage.html?id=11" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div> 
+                <div class="item">
+                    <img src="./images/Radeon™ RX 9070.jpg" alt="Radeon 9070">
+                    <h3>Radeon™ RX 9070 </h3>
+                    <div class="hover-content">
+                        <p>Price: $549.00</p>
+                        <a href="prodpage.html?id=12" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
             </div>
         </section> 
         <section id="parts" class="parts">
@@ -124,7 +167,8 @@
                     <h3>ROG CROSSHAIR X870E HERO</h3>
                     <div class="hover-content">
                         <p>Price: $699.99</p>
-                        <a href="prodpage.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=13" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -132,7 +176,8 @@
                     <h3>ROG STRIX X870-A GAMING WIFI</h3>
                     <div class="hover-content">
                         <p>Price: $369.99</p>
-                        <a href="prodpage.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=14" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -140,10 +185,158 @@
                     <h3>ROG STRIX B850-A GAMING WIFI</h3>
                     <div class="hover-content">
                         <p>Price: $269.99</p>
-                        <a href="prodpage.html" class="btn-hover">View More</a>
+                        <a href="prodpage.html?id=15" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/MaximusZ790Hero.jpg" alt="Maximus Z790 Hero">
+                    <h3>ROG Maximus Z790 Dark Hero</h3>
+                    <div class="hover-content">
+                        <p>Price: $299.99</p>
+                        <a href="prodpage.html?id=16" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/GIGABYTEZ790AORUS.jpg" alt="Z790 AORUS MASTER">
+                    <h3>Z790 AORUS MASTER (rev. 1.0)</h3>
+                    <div class="hover-content">
+                        <p>Price: $449.99</p>
+                        <a href="prodpage.html?id=17" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/MSITOMAHAWK.jpg" alt="MAG Z790 TOMAHAWK WIFI">
+                    <h3>MAG Z790 TOMAHAWK WIFI</h3>
+                    <div class="hover-content">
+                        <p>Price: $195.00</p>
+                        <a href="prodpage.html?id=18" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
             </div>
-        </section>   
+        </section>
+        <section id="parts" class="parts">
+            <h2 style="text-align: center; padding: 20px;">RAM</h2>
+            <p style="text-align: center; padding: 20px;">Build your own custom PC with the best parts available.</p>
+            <div class="grid">
+                <div class="item">
+                    <img src="./images/XtreemDDR5.jpg" alt="X870E ">
+                    <h3>TEAMGROUP T-Force Xtreem DDR5 8000MHz</h3>
+                    <div class="hover-content">
+                        <p>Price: $224.99</p>
+                        <a href="prodpage.html?id=19" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/RIPJAWS5.jpg" alt="X870-A">
+                    <h3>G.Skill Ripjaws S5 Series 6000MHz</h3>
+                    <div class="hover-content">
+                        <p>Price: $99.99</p>
+                        <a href="prodpage.html?id=20" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/cossairdominator.jpg" alt="B850-A">
+                    <h3>Corsair Dominator Platinum RGB DDR5 6400MHz</h3>
+                    <div class="hover-content">
+                        <p>Price: $159.99</p>
+                        <a href="prodpage.html?id=21" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/FURYKINGSTON.jpg" alt="Maximus Z790 Hero">
+                    <h3>Kingston Fury Beast DDR5 6000MHz/h3>
+                    <div class="hover-content">
+                        <p>Price: $146.25</p>
+                        <a href="prodpage.html?id=22" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/ADATA XPG Lancer DDR5 6000MHz.jpg" alt="Z790 AORUS MASTER">
+                    <h3>ADATA XPG Lancer DDR5 6000MHz</h3>
+                    <div class="hover-content">
+                        <p>Price: $109.99</p>
+                        <a href="prodpage.html?id=23" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/CorsairVengeanceDDR57200MHz.jpg" alt="MAG Z790 TOMAHAWK WIFI">
+                    <h3>Corsair Vengeance DDR5 7200MHz (2x16GB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $149.99</p>
+                        <a href="prodpage.html?id=24" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="parts" class="parts">
+            <h2 style="text-align: center; padding: 20px;">SOLID-STATE DRIVES</h2>
+            <p style="text-align: center; padding: 20px;">Build your own custom PC with the best parts available.</p>
+            <div class="grid">
+                <div class="item">
+                    <img src="./images/CRUCIALNVMe.jpg" alt="X870E ">
+                    <h3>Crucial T705 Gen5 NVMe SSD (1TB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $206.99</p>
+                        <a href="prodpage.html?id=25" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/corsairMp700.jpg" alt="X870-A">
+                    <h3>Corsair MP700 Pro (1TB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $174.99</p>
+                        <a href="prodpage.html?id=26" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/ADATANVME.jpg" alt="B850-A">
+                    <h3>ADATA Legend 970 PRO Gen5 (1TB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $263.69</p>
+                        <a href="prodpage.html?id=27" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/Samsungnvme.jpg" alt="Maximus Z790 Hero">
+                    <h3>Samsung 990 Pro (1TB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $168.90</p>
+                        <a href="prodpage.html?id=28" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/WDNVME.jpg" alt="Z790 AORUS MASTER">
+                    <h3> WD Black SN850X (1TB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $89.14</p>
+                        <a href="prodpage.html?id=29" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./images/sabrent2tb.jpg" alt="MAG Z790 TOMAHAWK WIFI">
+                    <h3>Sabrent Rocket 4 Plus (2TB)</h3>
+                    <div class="hover-content">
+                        <p>Price: $219.99</p>
+                        <a href="prodpage.html?id=30" class="btn-hover">View More</a>
+                        <a href="cart.html" class="btn-hover">Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>      
     </body>   
 </html>    

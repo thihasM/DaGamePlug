@@ -5,6 +5,7 @@
         "price": 823.81,
         "image": "./images/Ryzen9.jpg",
         "category": "Processors",
+        "stock": 10,
         "description": "Flagship gaming processor with 3D V-Cache technology",
         "specs": {
             "cores": 16,
@@ -12,7 +13,8 @@
             "base_clock": "4.2 GHz",
             "boost_clock": "5.8 GHz",
             "cache": "192MB",
-            "socket": "AM5"
+            "socket": "AM5",
+            "tdp": "170W"
         }
     },
     {
@@ -21,14 +23,16 @@
         "price": 447.78,
         "image": "./images/Ryzen97900x.jpg",
         "category": "Processors",
-        "description": "High-performance 12-core processor",
+        "stock": 10,
+        "description": "12-core powerhouse for gaming and content creation",
         "specs": {
             "cores": 12,
             "threads": 24,
             "base_clock": "3.8 GHz",
-            "boost_clock": "5.6 GHz",
+            "boost_clock": "5.4 GHz",
             "cache": "76MB",
-            "socket": "AM5"
+            "socket": "AM5",
+            "tdp": "105W"
         }
     },
     {
@@ -37,14 +41,16 @@
         "price": 357.56,
         "image": "./images/Ryzen97900x.jpg",
         "category": "Processors",
-        "description": "Cost-effective 12-core processing power",
+        "stock": 20,
+        "description": "High-performance unlocked desktop processor",
         "specs": {
             "cores": 12,
             "threads": 24,
             "base_clock": "4.0 GHz",
-            "boost_clock": "5.5 GHz",
+            "boost_clock": "5.6 GHz",
             "cache": "76MB",
-            "socket": "AM5"
+            "socket": "AM5",
+            "tdp": "170W"
         }
     },
     {
@@ -53,15 +59,16 @@
         "price": 549.99,
         "image": "./images/IntelI9.jpg",
         "category": "Processors",
-        "description": "Intel's flagship 24-core hybrid processor",
+        "stock": 15,
+        "description": "24-core hybrid architecture flagship processor",
         "specs": {
-            "cores": 24,
+            "cores": "24 (8P+16E)",
             "threads": 32,
-            "p-cores": 8,
-            "e-cores": 16,
             "base_clock": "3.2 GHz",
             "boost_clock": "6.0 GHz",
-            "socket": "LGA1700"
+            "cache": "36MB",
+            "socket": "LGA 1700",
+            "tdp": "125W"
         }
     },
     {
@@ -70,15 +77,16 @@
         "price": 409.99,
         "image": "./images/IntelI7.jpg",
         "category": "Processors",
-        "description": "High-performance 20-core hybrid processor",
+        "stock": 12,
+        "description": "20-core hybrid performance processor",
         "specs": {
-            "cores": 20,
+            "cores": "20 (8P+12E)",
             "threads": 28,
-            "p-cores": 8,
-            "e-cores": 12,
             "base_clock": "3.4 GHz",
             "boost_clock": "5.6 GHz",
-            "socket": "LGA1700"
+            "cache": "33MB",
+            "socket": "LGA 1700",
+            "tdp": "125W"
         }
     },
     {
@@ -87,111 +95,446 @@
         "price": 329.00,
         "image": "./images/IntelI5.jpg",
         "category": "Processors",
-        "description": "Mainstream 14-core hybrid processor",
+        "stock": 18,
+        "description": "14-core mainstream gaming processor",
         "specs": {
-            "cores": 14,
+            "cores": "14 (6P+8E)",
             "threads": 20,
-            "p-cores": 6,
-            "e-cores": 8,
             "base_clock": "3.5 GHz",
             "boost_clock": "5.3 GHz",
-            "socket": "LGA1700"
+            "cache": "24MB",
+            "socket": "LGA 1700",
+            "tdp": "125W"
         }
     },
-    {
-        "id": 7,
-        "name": "ASUS TUF Gaming GeForce RTX™ 5090",
-        "price": 2759.00,
-        "image": "./images/TUFRTX5090.jpg",
-        "category": "Graphics Cards",
-        "description": "Flagship NVIDIA Ada Lovelace architecture GPU",
-        "specs": {
-            "vram": "24GB GDDR6X",
-            "core_clock": "2520 MHz",
-            "cuda_cores": 18432,
-            "bus_width": "384-bit",
-            "power_connectors": "16-pin PCIe 5.0",
-            "outputs": "3x DisplayPort 2.1, 1x HDMI 2.1"
-        }
-    },
-    {
-        "id": 8,
-        "name": "ASUS TUF Gaming GeForce RTX™ 5080",
-        "price": 1487.99,
-        "image": "./images/TUFRTX5080.jpg",
-        "category": "Graphics Cards",
-        "description": "High-end 4K gaming GPU",
-        "specs": {
-            "vram": "16GB GDDR6X",
-            "core_clock": "2415 MHz",
-            "cuda_cores": 12288,
-            "bus_width": "256-bit",
-            "power_connectors": "12+4 pin PCIe 5.0",
-            "outputs": "3x DisplayPort 2.1, 1x HDMI 2.1"
-        }
-    },
-    {
-        "id": 9,
-        "name": "ASUS TUF Gaming GeForce RTX™ 5070 Ti",
-        "price": 999.99,
-        "image": "./images/TUFRTX5070Ti.jpg",
-        "category": "Graphics Cards",
-        "description": "1440p gaming powerhouse",
-        "specs": {
-            "vram": "12GB GDDR6X",
-            "core_clock": "2310 MHz",
-            "cuda_cores": 7680,
-            "bus_width": "192-bit",
-            "power_connectors": "8+8 pin PCIe",
-            "outputs": "3x DisplayPort 1.4a, 1x HDMI 2.1"
-        }
-    },
-    {
-        "id": 10,
-        "name": "ROG CROSSHAIR X870E HERO",
-        "price": 699.99,
-        "image": "./images/ROGCROSSHAIRX870EERO.jpg",
-        "category": "Motherboards",
-        "description": "Premium AMD AM5 motherboard",
-        "specs": {
-            "socket": "AM5",
-            "chipset": "AMD X870E",
-            "form_factor": "ATX",
-            "memory": "DDR5-6400+",
-            "expansion": "PCIe 5.0 x16, 3x PCIe 4.0 x4",
-            "storage": "5x M.2, 8x SATA"
-        }
-    },
-    {
-        "id": 11,
-        "name": "ROG STRIX X870-A GAMING WIFI",
-        "price": 369.99,
-        "image": "./images/ROGCROSSHAIRX870ERO.jpg",
-        "category": "Motherboards",
-        "description": "Mid-range AMD AM5 motherboard",
-        "specs": {
-            "socket": "AM5",
-            "chipset": "AMD X870",
-            "form_factor": "ATX",
-            "memory": "DDR5-6000",
-            "expansion": "PCIe 5.0 x16, 2x PCIe 4.0 x4",
-            "storage": "4x M.2, 6x SATA"
-        }
-    },
-    {
-        "id": 12,
-        "name": "ROG STRIX B850-A GAMING WIFI",
-        "price": 269.99,
-        "image": "./images/ROGB850.jpg",
-        "category": "Motherboards",
-        "description": "Entry-level AMD AM5 motherboard",
-        "specs": {
-            "socket": "AM5",
-            "chipset": "AMD B850",
-            "form_factor": "ATX",
-            "memory": "DDR5-5600",
-            "expansion": "PCIe 5.0 x16, 1x PCIe 4.0 x4",
-            "storage": "3x M.2, 4x SATA"
-        }
-    }
+    
+        {
+            "id": 7,
+            "name": "ASUS TUF Gaming GeForce RTX™ 5090",
+            "price": 2759.00,
+            "image": "./images/TUFRTX5090.jpg",
+            "category": "Graphic Cards",
+            "stock": 5,
+            "description": "Next-gen flagship GPU with advanced cooling system",
+            "specs": {
+                "vram": "24GB GDDR7",
+                "cuda_cores": 18432,
+                "boost_clock": "2.8 GHz",
+                "memory_bus": "384-bit",
+                "power_connectors": "16-pin",
+                "tdp": "500W"
+            }
+        },
+        {
+            "id": 8,
+            "name": "ASUS TUF Gaming GeForce RTX™ 5080",
+            "price": 1487.99,
+            "image": "./images/TUFRTX5080.jpg",
+            "category": "Graphic Cards",
+            "stock": 8,
+            "description": "High-performance 4K gaming GPU",
+            "specs": {
+                "vram": "20GB GDDR7",
+                "cuda_cores": 14080,
+                "boost_clock": "2.6 GHz",
+                "memory_bus": "320-bit",
+                "power_connectors": "16-pin",
+                "tdp": "420W"
+            }
+        },
+        {
+            "id": 9,
+            "name": "ASUS TUF Gaming GeForce RTX™ 5070 Ti",
+            "price": 999.99,
+            "image": "./images/TUFRTX5070Ti.jpg",
+            "category": "Graphic Cards",
+            "stock": 12,
+            "description": "1440p gaming powerhouse with ray tracing",
+            "specs": {
+                "vram": "16GB GDDR7",
+                "cuda_cores": 10752,
+                "boost_clock": "2.5 GHz",
+                "memory_bus": "256-bit",
+                "power_connectors": "16-pin",
+                "tdp": "350W"
+            }
+        },
+        {
+            "id": 10,
+            "name": "ASUS TUF Gaming GeForce RTX™ 4090",
+            "price": 999.99,
+            "image": "./images/4090.jpg",
+            "category": "Graphic Cards",
+            "stock": 7,
+            "description": "Current-gen performance leader",
+            "specs": {
+                "vram": "24GB GDDR6X",
+                "cuda_cores": 16384,
+                "boost_clock": "2.52 GHz",
+                "memory_bus": "384-bit",
+                "power_connectors": "16-pin",
+                "tdp": "450W"
+            }
+        },
+        {
+            "id": 11,
+            "name": "Radeon™ RX 9070 XT",
+            "price": 600.00,
+            "image": "./images/Radeon9070XT.jpg",
+            "category": "Graphic Cards",
+            "stock": 6,
+            "description": "High-end AMD GPU with RDNA 4 architecture",
+            "specs": {
+                "vram": "20GB GDDR6",
+                "stream_processors": 5120,
+                "game_clock": "2.4 GHz",
+                "memory_bus": "320-bit",
+                "power_connectors": "8+8-pin",
+                "tdp": "300W"
+            }
+        },
+        {
+            "id": 12,
+            "name": "Radeon™ RX 9070",
+            "price": 549.00,
+            "image": "./images/Radeon™ RX 9070.jpg",
+            "category": "Graphic Cards",
+            "stock": 10,
+            "description": "Mainstream AMD gaming graphics card",
+            "specs": {
+                "vram": "16GB GDDR6",
+                "stream_processors": 4608,
+                "game_clock": "2.2 GHz",
+                "memory_bus": "256-bit",
+                "power_connectors": "8-pin",
+                "tdp": "250W"
+            }
+        },
+        
+            {
+                "id": 13,
+                "name": "ROG CROSSHAIR X870E HERO",
+                "price": 699.99,
+                "image": "./images/ROGCROSSHAIRX870EERO.jpg",
+                "category": "Motherboards",
+                "stock": 5,
+                "description": "Flagship AMD AM5 motherboard for extreme overclocking",
+                "specs": {
+                    "chipset": "AMD X870E",
+                    "socket": "AM5",
+                    "form_factor": "ATX",
+                    "memory_slots": "4x DDR5",
+                    "max_ram": "128GB 6400MHz+",
+                    "pcie_slots": "3x PCIe 5.0 x16",
+                    "storage": "5x M.2, 6x SATA",
+                    "wifi": "Wi-Fi 6E"
+                }
+            },
+            {
+                "id": 14,
+                "name": "ROG STRIX X870-A GAMING WIFI",
+                "price": 369.99,
+                "image": "./images/ROGCROSSHAIRX870ERO.jpg",
+                "category": "Motherboards",
+                "stock": 8,
+                "description": "High-performance AMD AM5 gaming motherboard",
+                "specs": {
+                    "chipset": "AMD X870",
+                    "socket": "AM5",
+                    "form_factor": "ATX",
+                    "memory_slots": "4x DDR5",
+                    "max_ram": "128GB 6000MHz",
+                    "pcie_slots": "2x PCIe 5.0 x16",
+                    "storage": "4x M.2, 6x SATA",
+                    "wifi": "Wi-Fi 6"
+                }
+            },
+            {
+                "id": 15,
+                "name": "ROG STRIX B850-A GAMING WIFI",
+                "price": 269.99,
+                "image": "./images/ROGB850.jpg",
+                "category": "Motherboards",
+                "stock": 10,
+                "description": "Mid-range AMD AM5 motherboard with premium features",
+                "specs": {
+                    "chipset": "AMD B850",
+                    "socket": "AM5",
+                    "form_factor": "ATX",
+                    "memory_slots": "4x DDR5",
+                    "max_ram": "128GB 5600MHz",
+                    "pcie_slots": "1x PCIe 5.0 x16",
+                    "storage": "3x M.2, 4x SATA",
+                    "wifi": "Wi-Fi 6"
+                }
+            },
+            {
+                "id": 16,
+                "name": "ROG Maximus Z790 Dark Hero",
+                "price": 299.99,
+                "image": "./images/MaximusZ790Hero.jpg",
+                "category": "Motherboards",
+                "stock": 5,
+                "description": "Premium Intel LGA1700 motherboard for 13th/14th Gen CPUs",
+                "specs": {
+                    "chipset": "Intel Z790",
+                    "socket": "LGA 1700",
+                    "form_factor": "ATX",
+                    "memory_slots": "4x DDR5",
+                    "max_ram": "128GB 7200MHz+",
+                    "pcie_slots": "3x PCIe 5.0 x16",
+                    "storage": "5x M.2, 6x SATA",
+                    "thunderbolt": "USB4 Support"
+                }
+            },
+            {
+                "id": 17,
+                "name": "Z790 AORUS MASTER (rev. 1.0)",
+                "price": 449.99,
+                "image": "./images/GIGABYTEZ790AORUS.jpg",
+                "category": "Motherboards",
+                "stock": 7,
+                "description": "High-end Intel motherboard with robust power delivery",
+                "specs": {
+                    "chipset": "Intel Z790",
+                    "socket": "LGA 1700",
+                    "form_factor": "E-ATX",
+                    "memory_slots": "4x DDR5",
+                    "max_ram": "128GB 7600MHz",
+                    "pcie_slots": "2x PCIe 5.0 x16",
+                    "storage": "5x M.2, 8x SATA",
+                    "vrms": "20+1+2 Phase"
+                }
+            },
+            {
+                "id": 18,
+                "name": "MAG Z790 TOMAHAWK WIFI",
+                "price": 195.00,
+                "image": "./images/MSITOMAHAWK.jpg",
+                "category": "Motherboards",
+                "stock": 10,
+                "description": "Value-oriented Z790 motherboard with core features",
+                "specs": {
+                    "chipset": "Intel Z790",
+                    "socket": "LGA 1700",
+                    "form_factor": "ATX",
+                    "memory_slots": "4x DDR5",
+                    "max_ram": "128GB 6400MHz",
+                    "pcie_slots": "1x PCIe 5.0 x16",
+                    "storage": "4x M.2, 6x SATA",
+                    "wifi": "Wi-Fi 6"
+                }
+            },
+            
+                {
+                    "id": 19,
+                    "name": "TEAMGROUP T-Force Xtreem DDR5 8000MHz",
+                    "price": 224.99,
+                    "image": "./images/XtreemDDR5.jpg",
+                    "category": "RAM",
+                    "stock": 10,
+                    "description": "Ultra-high speed DDR5 memory for extreme performance",
+                    "specs": {
+                        "capacity": "32GB (2x16GB)",
+                        "speed": "8000MHz",
+                        "timing": "CL38-48-48-128",
+                        "voltage": "1.45V",
+                        "rgb": "No",
+                        "height": "45mm"
+                    }
+                },
+                {
+                    "id": 20,
+                    "name": "G.Skill Ripjaws S5 Series 6000MHz",
+                    "price": 99.99,
+                    "image": "./images/RIPJAWS5.jpg",
+                    "category": "RAM",
+                    "stock": 15,
+                    "description": "High-performance DDR5 memory with optimized timings",
+                    "specs": {
+                        "capacity": "32GB (2x16GB)",
+                        "speed": "6000MHz",
+                        "timing": "CL30-40-40-96",
+                        "voltage": "1.35V",
+                        "rgb": "No",
+                        "height": "33mm"
+                    }
+                },
+                {
+                    "id": 21,
+                    "name": "Corsair Dominator Platinum RGB DDR5 6400MHz",
+                    "price": 159.99,
+                    "image": "./images/cossairdominator.jpg",
+                    "category": "RAM",
+                    "stock": 8,
+                    "description": "Premium RGB memory with DHX cooling technology",
+                    "specs": {
+                        "capacity": "32GB (2x16GB)",
+                        "speed": "6400MHz",
+                        "timing": "CL32-39-39-102",
+                        "voltage": "1.4V",
+                        "rgb": "Yes",
+                        "icue_compatible": "Yes"
+                    }
+                },
+                {
+                    "id": 22,
+                    "name": "Kingston Fury Beast DDR5 6000MHz",
+                    "price": 146.25,
+                    "image": "./images/FURYKINGSTON.jpg",
+                    "category": "RAM",
+                    "stock": 12,
+                    "description": "Plug-and-play optimized DDR5 memory",
+                    "specs": {
+                        "capacity": "32GB (2x16GB)",
+                        "speed": "6000MHz",
+                        "timing": "CL36-38-38-80",
+                        "voltage": "1.35V",
+                        "rgb": "No",
+                        "xmp_3.0": "Yes"
+                    }
+                },
+                {
+                    "id": 23,
+                    "name": "ADATA XPG Lancer DDR5 6000MHz",
+                    "price": 109.99,
+                    "image": "./images/ADATA XPG Lancer DDR5 6000MHz.jpg",
+                    "category": "RAM",
+                    "stock": 10,
+                    "description": "Mid-range DDR5 with aggressive heat spreader",
+                    "specs": {
+                        "capacity": "32GB (2x16GB)",
+                        "speed": "6000MHz",
+                        "timing": "CL30-40-40-96",
+                        "voltage": "1.35V",
+                        "rgb": "Yes",
+                        "height": "44mm"
+                    }
+                },
+                {
+                    "id": 24,
+                    "name": "Corsair Vengeance DDR5 7200MHz (2x16GB)",
+                    "price": 149.99,
+                    "image": "./images/CorsairVengeanceDDR57200MHz.jpg",
+                    "category": "RAM",
+                    "stock": 10,
+                    "description": "High-frequency DDR5 with precision overclocking",
+                    "specs": {
+                        "capacity": "32GB (2x16GB)",
+                        "speed": "7200MHz",
+                        "timing": "CL34-44-44-96",
+                        "voltage": "1.45V",
+                        "rgb": "No",
+                        "xmp_3.0": "Yes"
+                    }
+                },
+                
+                    {
+                        "id": 25,
+                        "name": "Crucial T705 Gen5 NVMe SSD (1TB)",
+                        "price": 206.99,
+                        "image": "./images/CRUCIALNVMe.jpg",
+                        "category": "SSD",
+                        "stock": 8,
+                        "description": "High-performance PCIe Gen5 NVMe SSD with cutting-edge 232-layer NAND technology.",
+                        "specs": {
+                            "capacity": "1TB",
+                            "interface": "NVMe (PCIe Gen 5 x4)",
+                            "sequential_read": "13,600 MB/s",
+                            "sequential_write": "10,200 MB/s",
+                            "endurance": "600 TBW",
+                            "form_factor": "M.2 (2280)",
+                            "warranty": "5 years"
+                        }
+                    },
+                    {
+                        "id": 26,
+                        "name": "Corsair MP700 Pro (1TB)",
+                        "price": 174.99,
+                        "image": "./images/corsairMp700.jpg",
+                        "category": "SSD",
+                        "stock": 10,
+                        "description": "Advanced PCIe Gen5 SSD offering exceptional speed and reliability for gaming and professional workloads.",
+                        "specs": {
+                            "capacity": "1TB",
+                            "interface": "PCIe Gen 5 x4",
+                            "sequential_read": "Up to 12,000 MB/s",
+                            "sequential_write": "Up to 10,000 MB/s",
+                            "endurance": "700 TBW",
+                            "form_factor": "M.2 (2280)",
+                            "warranty": "5 years"
+                        }
+                    },
+                    {
+                        "id": 27,
+                        "name": "ADATA Legend 970 PRO Gen5 (1TB)",
+                        "price": 263.69,
+                        "image": "./images/ADATANVME.jpg",
+                        "category": "SSD",
+                        "stock": 5,
+                        "description": "High-speed PCIe Gen5 SSD with active cooling technology for sustained performance.",
+                        "specs": {
+                            "capacity": "1TB",
+                            "interface": "PCIe Gen 5 x4",
+                            "sequential_read": "14,000 MB/s",
+                            "sequential_write": "11,000 MB/s",
+                            "endurance": "750 TBW",
+                            "form_factor": "M.2 (2280)",
+                            "warranty": "5 years"
+                        }
+                    },
+                    {
+                        "id": 28,
+                        "name": "Samsung 990 Pro (1TB)",
+                        "price": 168.90,
+                        "image": "./images/Samsungnvme.jpg",
+                        "category": "SSD",
+                        "stock": 10,
+                        "description": "Reliable PCIe Gen4 NVMe SSD with high performance and energy efficiency.",
+                        "specs": {
+                            "capacity": "1TB",
+                            "interface": "PCIe Gen 4.0 x4, NVMe 2.0",
+                            "sequential_read": "Up to 7,450 MB/s",
+                            "sequential_write": "Up to 6,900 MB/s",
+                            "endurance": "600 TBW",
+                            "form_factor": "M.2 (2280)",
+                            "warranty": "5 years"
+                        }
+                    },
+                    {
+                        "id": 29,
+                        "name": "WD Black SN850X (1TB)",
+                        "price": 89.14,
+                        "image": "./images/WDNVME.jpg",
+                        "category": "SSD",
+                        "stock": 15,
+                        "description": "High-performance NVMe SSD optimized for gaming with excellent speed and thermal management.",
+                        "specs": {
+                            "capacity": "1TB",
+                            "interface": "PCIe Gen 4.0 x4",
+                            "sequential_read": "Up to 7,300 MB/s",
+                            "sequential_write": "Up to 6,600 MB/s",
+                            "endurance": "600 TBW",
+                            "form_factor": "M.2 (2280)",
+                            "warranty": "5 years"
+                        }
+                    },
+                    {
+                        "id": 30,
+                        "name": "Sabrent Rocket 4 Plus (2TB)",
+                        "price": 219.99,
+                        "image": "./images/sabrent2tb.jpg",
+                        "category": "SSD",
+                        "stock": 5,
+                        "description": "High-capacity PCIe Gen4 SSD with impressive speed and reliability for demanding applications.",
+                        "specs": {
+                            "capacity": "2TB",
+                            "interface": "PCIe Gen 4.0 x4",
+                            "sequential_read": "7,000 MB/s",
+                            "sequential_write": "6,850 MB/s",
+                            "endurance": "1,400 TBW",
+                            "form_factor": "M.2 (2280)",
+                            "warranty": "5 years"
+                        }
+                    }  
 ]
