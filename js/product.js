@@ -7,11 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('product-content element not found!');
         return;
     }
-
+    
     if (!productId) {
         container.innerHTML = '<p class="error">No product specified</p>';
         return;
     }
+
+    // Initialize favorites
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     fetch('./json/product.json')
         .then(response => {
@@ -21,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(products => {
             const product = products.find(p => p.id == productId);
             if (!product) throw new Error('Product not found');
+
+            // Favorite button HTML
+            const isFavorited = favorites.some(f => f.id == productId);
+            const favoriteButton = `
+                <button class="favorite-btn" onclick="toggleFavorite(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price}, '${product.image}')">
+                    ${isFavorited ? '🤍' : '🖤'}
+                </button>
+            `;
 
             // Build stock status HTML
             const stockStatus = product.stock > 0 
@@ -40,11 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 : '<p class="out-of-stock">Temporarily Unavailable</p>';
 
             container.innerHTML = `
+                <div class="product-header">
+                    ${favoriteButton}
+                    <h1>${product.name}</h1>
+                </div>
                 <div class="product-images">
                     <img src="${product.image}" alt="${product.name}">
                 </div>
                 <div class="product-info">
-                    <h1>${product.name}</h1>
                     ${stockStatus}
                     <p class="price">$${product.price?.toFixed(2) || 'N/A'}</p>
                     ${product.description ? `<p class="description">${product.description}</p>` : ''}
@@ -62,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-
-            // Proper event listener binding
             const addToCartBtn = container.querySelector('.add-to-cart');
             if (addToCartBtn) {
                 addToCartBtn.addEventListener('click', () => {
@@ -81,4 +93,31 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error:', error);
             container.innerHTML = `<p class="error">${error.message}</p>`;
         });
+
+    // Favorite toggle function
+    window.toggleFavorite = function(id, name, price, image) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const existingIndex = favorites.findIndex(f => f.id == id);
+
+        if (existingIndex > -1) {
+            favorites.splice(existingIndex, 1);
+            alert('Removed from favorites!');
+        } else {
+            favorites.push({
+                id: id,
+                name: name,
+                price: price,
+                image: image
+            });
+            alert('Added to favorites!');
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        
+        // Update button appearance
+        const favButton = document.querySelector('.favorite-btn');
+        if (favButton) {
+            favButton.innerHTML = existingIndex > -1 ? '🖤' : '🤍';
+        }
+    };
 });

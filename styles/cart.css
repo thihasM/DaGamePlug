@@ -1,4 +1,9 @@
-/* cart.css */
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #fff;
+    color: #000;
+}
 .cart-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -74,8 +79,8 @@
 }
 
 .remove-btn {
-    background: #ff4444;
-    color: white;
+    background: white;
+    color: black;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
@@ -84,15 +89,23 @@
 }
 
 .remove-btn:hover {
-    background: #cc0000;
+    background: black;
+    color: white;
 }
 
 .remove-all {
-    background: #ff8800;
+    background: white;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .remove-all:hover {
-    background: #cc6600;
+    background: black;
+    color: white;
 }
 
 .cart-total {
@@ -103,8 +116,8 @@
 }
 
 .checkout-btn {
-    background: #fff;
-    color: #000;
+    background: black;
+    color: white;
     border: none;
     padding: 12px 30px;
     font-weight: bold;
@@ -113,7 +126,8 @@
 }
 
 .checkout-btn:hover {
-    background: #e6e6e6;
+    background: black;
+    color: white;
 }
 
 /* Price styling */

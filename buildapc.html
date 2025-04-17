@@ -6,8 +6,10 @@
         <title>DaGamePlug.com</title>
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/candg.css">
+        <script src="./js/main.js" defer></script>
         <script src="./js/product.js" defer></script>
         <script src="./js/cart.js" defer></script>
+        
     </head>
     <body>
         <header class="header">
@@ -15,25 +17,26 @@
                 <a href="index.html"><img src="./images/blacklogo.png"alt="Logo" class="logo-image"></a>
             </div>
             <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li>
-                        <a href="products.html">Products</a>
-                        <ul class="submenu">
-                            <li><a href="consoles.html">Consoles</a></li>
-                            <li><a href="gperipherals.html">Gaming Peripherals</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="buildapc.html">Build a pc</a></li>
-                    <li><a href="games.html">Games</a><li>
-                    <li><a href="upcoming.html">Upcoming Games</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <div class="cart-icon">
-                        <a href="cart.html">Cart <span id="cart-count">0</span></a>
-                    </div>
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <ul class="nav-menu" id="nav-menu">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li>
+                    <a href="products.html">Products</a>
+                    <ul class="submenu">
+                      <li><a href="consoles.html">Consoles</a></li>
+                      <li><a href="gperipherals.html">Gaming Peripherals</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="buildapc.html">Build a pc</a></li>
+                  <li><a href="games.html">Games</a></li>
+                  <li><a href="upcoming.html">Upcoming Games</a></li>
+                  <li><a href="faq.html">FAQs</a></li>
+                  <li><a href="favorite.html">Favorite</a></li>
+                  <li><a href="cart.html">Cart</a></li>
                 </ul>
-            </nav>
+              </nav>
+              
          </header>
         <section id="parts" class="parts">
             <h2 style="text-align: center; padding: 20px;">Processors</h2>
@@ -46,18 +49,14 @@
                     <div class="hover-content">
                         <p>Price: $823.81</p>
                         <a href="prodpage.html?id=1" class="btn-hover">View More</a>
-                        <div class="btn-hover" data-product-id="1">
-                            <button class="cart-btn" onclick="addToCart(1)">Add to Cart</button>
-                        </div>
                     </div>
                 </div>
                 <div class="item"data-product-id="2">
-                    <img src="./images/Ryzen97900x.jpg" alt="Ryzen 97900">
+                    <img src="./images/Ryzen97900.jpg" alt="Ryzen 97900">
                     <h3>AMD Ryzen™ 9 7900</h3>
                     <div class="hover-content">
                         <p>Price: $447.78</p>
                         <a href="prodpage.html?id=2" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item" data-product-id="3">
@@ -66,7 +65,6 @@
                     <div class="hover-content">
                         <p>Price: $357.56</p>
                         <a href="prodpage.html?id=3" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item" data-product-id="4">
@@ -75,7 +73,6 @@
                     <div class="hover-content">
                         <p>Price: $549.99</p>
                         <a href="prodpage.html?id=4" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item" data-product-id="5">
@@ -84,7 +81,6 @@
                     <div class="hover-content">
                         <p>Price: $409.99</p>
                         <a href="prodpage.html?id=5" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a> 
                     </div>
                 </div>
                 <div class="item"   data-product-id="6">
@@ -92,8 +88,7 @@
                     <h3>Intel® Core™ i5 processor 14600K</h3>
                     <div class="hover-content">
                         <p>Price: $329.00</p>
-                        <a href="prodpage.html?id=6" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>                  
+                        <a href="prodpage.html?id=6" class="btn-hover">View More</a>                 
                     </div>
                 </div>
             </div>
@@ -108,7 +103,6 @@
                     <div class="hover-content">
                         <p>Price: $2759.00</p>
                         <a href="prodpage.html?id=7" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -117,7 +111,6 @@
                     <div class="hover-content">
                         <p>Price: $1487.99</p>
                         <a href="prodpage.html?id=8" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -126,7 +119,6 @@
                     <div class="hover-content">
                         <p>Price: $999.99</p>
                         <a href="prodpage.html?id=9" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -135,7 +127,6 @@
                     <div class="hover-content">
                         <p>Price: $999.99</p>
                         <a href="prodpage.html?id=10" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -144,7 +135,6 @@
                     <div class="hover-content">
                         <p>Price: $600.00</p>
                         <a href="prodpage.html?id=11" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div> 
                 <div class="item">
@@ -153,7 +143,6 @@
                     <div class="hover-content">
                         <p>Price: $549.00</p>
                         <a href="prodpage.html?id=12" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
             </div>
@@ -168,7 +157,6 @@
                     <div class="hover-content">
                         <p>Price: $699.99</p>
                         <a href="prodpage.html?id=13" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -177,7 +165,6 @@
                     <div class="hover-content">
                         <p>Price: $369.99</p>
                         <a href="prodpage.html?id=14" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -186,7 +173,6 @@
                     <div class="hover-content">
                         <p>Price: $269.99</p>
                         <a href="prodpage.html?id=15" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -195,7 +181,6 @@
                     <div class="hover-content">
                         <p>Price: $299.99</p>
                         <a href="prodpage.html?id=16" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -204,7 +189,6 @@
                     <div class="hover-content">
                         <p>Price: $449.99</p>
                         <a href="prodpage.html?id=17" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -213,7 +197,6 @@
                     <div class="hover-content">
                         <p>Price: $195.00</p>
                         <a href="prodpage.html?id=18" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
             </div>
@@ -228,7 +211,6 @@
                     <div class="hover-content">
                         <p>Price: $224.99</p>
                         <a href="prodpage.html?id=19" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -237,7 +219,6 @@
                     <div class="hover-content">
                         <p>Price: $99.99</p>
                         <a href="prodpage.html?id=20" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -246,7 +227,6 @@
                     <div class="hover-content">
                         <p>Price: $159.99</p>
                         <a href="prodpage.html?id=21" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -255,7 +235,6 @@
                     <div class="hover-content">
                         <p>Price: $146.25</p>
                         <a href="prodpage.html?id=22" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -264,7 +243,6 @@
                     <div class="hover-content">
                         <p>Price: $109.99</p>
                         <a href="prodpage.html?id=23" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -273,7 +251,6 @@
                     <div class="hover-content">
                         <p>Price: $149.99</p>
                         <a href="prodpage.html?id=24" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
             </div>
@@ -288,7 +265,6 @@
                     <div class="hover-content">
                         <p>Price: $206.99</p>
                         <a href="prodpage.html?id=25" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -297,7 +273,6 @@
                     <div class="hover-content">
                         <p>Price: $174.99</p>
                         <a href="prodpage.html?id=26" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -306,7 +281,6 @@
                     <div class="hover-content">
                         <p>Price: $263.69</p>
                         <a href="prodpage.html?id=27" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -315,7 +289,6 @@
                     <div class="hover-content">
                         <p>Price: $168.90</p>
                         <a href="prodpage.html?id=28" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -324,7 +297,6 @@
                     <div class="hover-content">
                         <p>Price: $89.14</p>
                         <a href="prodpage.html?id=29" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
                 <div class="item">
@@ -333,7 +305,6 @@
                     <div class="hover-content">
                         <p>Price: $219.99</p>
                         <a href="prodpage.html?id=30" class="btn-hover">View More</a>
-                        <a href="cart.html" class="btn-hover">Cart</a>
                     </div>
                 </div>
             </div>

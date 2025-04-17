@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #fff;
+    color: #000;
+}
+.favorites-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.favorite-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+.favorite-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.favorite-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.favorite-actions button {
+    background: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background 0.3s, color 0.3s;
+}
+
+.favorite-actions button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.empty {
+    color: #666;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.favorite-section {
+    margin-top: 3rem;
+}
+
+.favorite-order {
+    background: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.favorite-order:hover {
+    transform: translateY(-3px);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.order-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.order-header small {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+
+.order-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    gap: 10px;
+    flex: 1 1 220px;
+}
+
+.order-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.order-item span {
+    font-weight: 500;
+    color: #34495e;
+}
+
+
+.order-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.order-actions button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.order-actions button:first-child {
+    background: white;
+    border: black 1px solid;
+    color: black;
+}
+.order-actions button:first-child:hover {
+    background: black;
+    color: white;
+}
+.order-actions button:last-child {
+    background: white;
+    border: black 1px solid;
+    color: black;
+}
+
+.order-actions button:last-child:hover {
+    background: black;
+    color: white;
+}
+
+
+.save-order-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: #222;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-order-btn:hover {
+    background: white;
+    color: black;
+}

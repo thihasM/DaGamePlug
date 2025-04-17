@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="./styles/prodpage.css">
         <script src="./js/product.js" defer></script>
         <script src="./js/cart.js" defer></script>
+        <script src="./js/favorite.js"defer></script>
+        <script src="./js/main.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -15,32 +17,30 @@
                 <a href="index.html"><img src="./images/blacklogo.png"alt="Logo" class="logo-image"></a>
             </div>
             <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li>
-                        <a href="products.html">Products</a>
-                        <ul class="submenu">
-                            <li><a href="consoles.html">Consoles</a></li>
-                            <li><a href="gperipherals.html">Gaming Peripherals</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="buildapc.html">Build a pc</a></li>
-                    <li><a href="games.html">Games</a><li>
-                    <li><a href="upcoming.html">Upcoming Games</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <div class="cart-icon">
-                        <a href="cart.html">🛒 <span id="cart-count">0</span></a>
-                    </div>
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <ul class="nav-menu" id="nav-menu">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li>
+                    <a href="products.html">Products</a>
+                    <ul class="submenu">
+                      <li><a href="consoles.html">Consoles</a></li>
+                      <li><a href="gperipherals.html">Gaming Peripherals</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="buildapc.html">Build a pc</a></li>
+                  <li><a href="games.html">Games</a></li>
+                  <li><a href="upcoming.html">Upcoming Games</a></li>
+                  <li><a href="faq.html">FAQs</a></li>
+                  <li><a href="favorite.html">Favorite</a></li>
+                  <li><a href="cart.html">Cart</a></li>
                 </ul>
-            </nav>
+              </nav>
+              
         </header>
         <main> 
             <section id="partshead" class="parts">
-                <h2>Build a PC</h2>
-                <p>Build your own custom PC with the best parts available.</p>
                 <div id="product-content">
-                    <!-- Prod inj -->
                     <div class="loading">Loading product...</div>
                     <div class="quantity-section" style="display: none;">
                         <div class="quantity-selector">
@@ -56,5 +56,3 @@
         </main> 
     </body>
 </html>
-
-
