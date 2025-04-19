@@ -70,6 +70,7 @@ function updateCartUI() {
 function loadCart() {
     const cartItems = document.getElementById('cart-items');
     const totalPrice = document.getElementById('total-price');
+    const checkoutBtn = document.querySelector('.checkout-btn');
 
     if (!cartItems || !totalPrice) return;
 
@@ -77,9 +78,11 @@ function loadCart() {
     cartItems.innerHTML = '';
 
     if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
-        totalPrice.textContent = '0.00';
-        return;
+        checkoutBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Your cart is empty!');
+        });
+        checkoutBtn.classList.add('disabled'); 
     }
 
     fetch('./json/product.json')

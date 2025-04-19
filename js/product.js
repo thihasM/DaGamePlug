@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isFavorited = favorites.some(f => f.id == productId);
             const favoriteButton = `
                 <button class="favorite-btn" onclick="toggleFavorite(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price}, '${product.image}')">
-                    ${isFavorited ? '🤍' : '🖤'}
+                    ${isFavorited ? '❤️' : '🖤'}
                 </button>
             `;
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update button appearance
         const favButton = document.querySelector('.favorite-btn');
         if (favButton) {
-            favButton.innerHTML = existingIndex > -1 ? '🖤' : '🤍';
+            favButton.innerHTML = existingIndex > -1 ? '🖤' : '❤️';
         }
     };
 });

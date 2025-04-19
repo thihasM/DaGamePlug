@@ -129,8 +129,12 @@ body {
     background: black;
     color: white;
 }
+.checkout-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
-/* Price styling */
 .item-price {
     color: #fff;
     font-weight: bold;
@@ -140,3 +144,44 @@ body {
     color: #fff;
     opacity: 0.8;
 }
+@media (max-width: 768px) {
+    .cart-container {
+        overflow-x: auto;
+    }
+    
+    .cart-items {
+        overflow-x: auto;
+        padding: 10px;
+    }
+    
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    .cart-item img {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .price-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .quantity-controls input {
+        width: 50px;
+    }
+    
+    .remove-options {
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+    .cart-total {
+        text-align: center;
+    }
+}    
