@@ -1,9 +1,11 @@
+//cart and favorites from localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-// Core cart functions
+// Add 
 function addToCart(productId, quantity = 1) {
     fetch('./json/product.json')
-        .then(response => response.json())
+        .then(res => res.json())
         .then(products => {
             const product = products.find(p => p.id == productId);
             if (!product) return;
@@ -12,81 +14,64 @@ function addToCart(productId, quantity = 1) {
             if (existingItem) {
                 existingItem.quantity += quantity;
             } else {
-                cart.push({
-                    id: productId,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image,
-                    quantity: quantity
-                });
+                cart.push({ id: productId, name: product.name, price: product.price, image: product.image, quantity });
             }
-            updateCartStorage();
+            saveCart();
             alert('Item added to cart successfully!');
         });
 }
 
-function removeOneFromCart(productId) {
-    const itemIndex = cart.findIndex(item => item.id == productId);
-    if (itemIndex > -1) {
-        if (cart[itemIndex].quantity > 1) {
-            cart[itemIndex].quantity -= 1;
-        } else {
-            cart.splice(itemIndex, 1);
-        }
-        updateCartStorage();
-        loadCart();
-    }
-}
-
+// Remove 
 function removeAllFromCart(productId) {
     cart = cart.filter(item => item.id != productId);
-    updateCartStorage();
+    saveCart();
     loadCart();
 }
 
+// quantity 
 function updateQuantity(productId, newQuantity) {
     const item = cart.find(item => item.id == productId);
     if (item) {
         item.quantity = Math.max(1, newQuantity);
-        updateCartStorage();
+        saveCart();
         loadCart();
     }
 }
 
-function updateCartStorage() {
+// Save cart 
+function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartUI();
+    updateCartCount();
 }
 
-function updateCartUI() {
-    const countElement = document.getElementById('cart-count');
-    if (countElement) {
-        countElement.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+function updateCartCount() {
+    const count = document.getElementById('cart-count');
+    if (count) {
+        count.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
         document.documentElement.classList.add('cart-initialized');
     }
 }
 
-// Cart display functions
+// dis cart 
 function loadCart() {
     const cartItems = document.getElementById('cart-items');
     const totalPrice = document.getElementById('total-price');
     const checkoutBtn = document.querySelector('.checkout-btn');
 
     if (!cartItems || !totalPrice) return;
-
     let total = 0;
     cartItems.innerHTML = '';
 
-    if (cart.length === 0) {
-        checkoutBtn.addEventListener('click', function(event) {
-            event.preventDefault();
+    if (cart.length === 0 && checkoutBtn) {
+        checkoutBtn.onclick = e => {
+            e.preventDefault();
             alert('Your cart is empty!');
-        });
-        checkoutBtn.classList.add('disabled'); 
+        };
+        checkoutBtn.classList.add('disabled');
     }
 
     fetch('./json/product.json')
-        .then(response => response.json())
+        .then(res => res.json())
         .then(products => {
             cartItems.innerHTML = cart.map(item => {
                 const product = products.find(p => p.id == item.id);
@@ -101,113 +86,67 @@ function loadCart() {
                         <div class="item-info">
                             <h4>${product.name}</h4>
                             <div class="price-info">
-                                <span class="item-price">$${product.price.toFixed(2)}</span>
-                                <div class="quantity-controls">
-                                    <input type="number" 
-                                           value="${item.quantity}" 
-                                           min="1" 
-                                           onchange="updateQuantity(${item.id}, this.value)">
-                                    <div class="remove-options">
-                                        ${item.quantity > 1 ? `
-                                            <button onclick="removeOneFromCart(${item.id})" 
-                                                    class="remove-btn"
-                                                    title="Remove one">
-                                                -1
-                                            </button>
-                                        ` : ''}
-                                        <button onclick="removeAllFromCart(${item.id})" 
-                                                class="remove-btn remove-all"
-                                                title="Remove all">
-                                            ${item.quantity > 1 ? 'Remove All' : 'Remove'}
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="item-total">$${itemTotal.toFixed(2)}</span>
+                                <span>$${product.price.toFixed(2)}</span>
+                                <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)">
+                                <button onclick="removeAllFromCart(${item.id})">${item.quantity > 1 ? 'Remove All' : 'Remove'}</button>
+                                <span>Total: $${itemTotal.toFixed(2)}</span>
                             </div>
                         </div>
                     </div>
                 `;
             }).join('');
-
             totalPrice.textContent = total.toFixed(2);
         });
 }
 
-// Initialize cart on page load
-document.addEventListener('DOMContentLoaded', () => {
-    loadCart();
-    updateCartUI();
-});
-
-// Favorites handling
-let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.favorite-btn').forEach(btn => {
-        const productId = btn.dataset.productId;
-        btn.innerHTML = favorites.some(f => f.id == productId) ? '❤️' : '🖤';
-    });
-
-    if (document.getElementById('favorites-container')) {
-        loadFavorites();
-    }
-});
-
-window.toggleFavorite = function(productId, productName, productPrice, productImage) {
-    const existingIndex = favorites.findIndex(f => f.id == productId);
-    const sanitizedName = productName.replace(/'/g, "\\'");
-
-    if (existingIndex > -1) {
-        favorites.splice(existingIndex, 1);
+// Favorite 
+function toggleFavorite(productId, productName, productPrice, productImage) {
+    const index = favorites.findIndex(f => f.id == productId);
+    if (index > -1) {
+        favorites.splice(index, 1);
     } else {
-        favorites.push({
-            id: productId,
-            name: sanitizedName,
-            price: productPrice,
-            image: productImage
-        });
+        favorites.push({ id: productId, name: productName.replace(/'/g, "\\'"), price: productPrice, image: productImage });
     }
-
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    updateFavoriteUI(productId);
-};
+    updateFavoriteButton(productId);
+}
 
-function updateFavoriteUI(productId) {
-    const isFavorited = favorites.some(f => f.id == productId);
+function updateFavoriteButton(productId) {
     document.querySelectorAll(`.favorite-btn[data-product-id="${productId}"]`).forEach(btn => {
-        btn.innerHTML = isFavorited ? '❤️' : '🖤';
+        btn.innerHTML = favorites.some(f => f.id == productId) ? '❤️' : '🖤';
     });
 }
 
 function loadFavorites() {
     const container = document.getElementById('favorites-container');
     if (!container) return;
-
-    container.innerHTML = favorites.length ? 
-        favorites.map(product => `
-            <div class="favorite-item">
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>$${product.price.toFixed(2)}</p>
-                <button class="favorite-btn" 
-                        data-product-id="${product.id}"
-                        onclick="toggleFavorite(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price}, '${product.image}')">
-                    ${favorites.some(f => f.id == product.id) ? '❤️ Remove' : '🖤 Add'}
-                </button>
-            </div>
-        `).join('') : '<p class="empty-favorites">No favorite items saved yet</p>';
+    container.innerHTML = favorites.length ? favorites.map(product => `
+        <div class="favorite-item">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>$${product.price.toFixed(2)}</p>
+            <button class="favorite-btn" data-product-id="${product.id}" onclick="toggleFavorite(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price}, '${product.image}')">
+                ${favorites.some(f => f.id == product.id) ? '❤️ Remove' : '🖤 Add'}
+            </button>
+        </div>`).join('') : '<p>No favorite items saved yet</p>';
 }
 
-// Expose CartManager globally so favorite.js and others can use it
+// Initi
+document.addEventListener('DOMContentLoaded', () => {
+    loadCart();
+    updateCartCount();
+    document.querySelectorAll('.favorite-btn').forEach(btn => {
+        const id = btn.dataset.productId;
+        btn.innerHTML = favorites.some(f => f.id == id) ? '❤️' : '🖤';
+    });
+    if (document.getElementById('favorites-container')) loadFavorites();
+});
+
+// glob access
 window.CartManager = {
     addToCart,
-    removeOneFromCart,
     removeAllFromCart,
     updateQuantity,
     loadCart,
-    clearCart: function() {
-        cart = [];
-        updateCartStorage();
-        loadCart();
-    }
+    clearCart: () => { cart = []; saveCart(); loadCart(); }
 };

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Initialize favorites
+    // Initialize fav
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     fetch('./json/product.json')
@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 </button>
             `;
 
-            // Build stock status HTML
+            // stock status HTML
             const stockStatus = product.stock > 0 
                 ? `<p class="in-stock">In Stock (${product.stock} available)</p>` 
                 : `<p class="out-of-stock">Out of Stock</p>`;
 
-            // Build cart controls HTML
+            // cart controls HTML
             const cartControls = product.stock > 0
                 ? `<div class="cart-controls">
                     <label>Quantity:</label>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = `<p class="error">${error.message}</p>`;
         });
 
-    // Favorite toggle function
+    // Fav toggle function
     window.toggleFavorite = function(id, name, price, image) {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         const existingIndex = favorites.findIndex(f => f.id == id);
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('favorites', JSON.stringify(favorites));
         
-        // Update button appearance
+        // Update btb 
         const favButton = document.querySelector('.favorite-btn');
         if (favButton) {
             favButton.innerHTML = existingIndex > -1 ? '🖤' : '❤️';

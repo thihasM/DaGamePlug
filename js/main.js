@@ -23,13 +23,9 @@ menuItems.forEach(item => {
                     otherItem.classList.remove('show-submenu');
                 }
             });
-
-            e.stopPropagation(); // stop bubbling
         });
     }
 });
-
-// Optional: close submenu on outside click
 document.addEventListener('click', () => {
     menuItems.forEach(item => item.classList.remove('show-submenu'));
 });
