@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('save-order-btn')?.addEventListener('click', saveCurrentOrderAsFavorite);
 });
 
-// Favorite Products
+// Fav Prod
 function loadFavoriteProducts() {
     const container = document.getElementById('favorite-products');
     if (!container) return;
@@ -38,7 +38,7 @@ function removeFavorite(productId) {
     loadFavoriteProducts();
 }
 
-// Favorite Orders
+// Fav Orders
 function loadFavoriteOrders() {
     const container = document.getElementById('favorite-order-list');
     if (!container) return;

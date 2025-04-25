@@ -99,7 +99,7 @@ function loadCart() {
         });
 }
 
-// Favorite 
+// Fav
 function toggleFavorite(productId, productName, productPrice, productImage) {
     const index = favorites.findIndex(f => f.id == productId);
     if (index > -1) {
@@ -150,3 +150,10 @@ window.CartManager = {
     loadCart,
     clearCart: () => { cart = []; saveCart(); loadCart(); }
 };
+
+document.getElementById('checkout-btn')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    const form = document.getElementById('embedded-payment');
+    if (form) form.style.display = 'block';
+    this.style.display = 'none';
+  });
