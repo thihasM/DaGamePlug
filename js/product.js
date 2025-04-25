@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = `<p class="error">${error.message}</p>`;
         });
 
-    // Fav toggle function
+    // Fav tog function
     window.toggleFavorite = function(id, name, price, image) {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         const existingIndex = favorites.findIndex(f => f.id == id);

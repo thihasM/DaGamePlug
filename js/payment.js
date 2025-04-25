@@ -30,9 +30,9 @@ document.getElementById('embeddedPaymentForm').addEventListener('submit', functi
   deliveryDate.setDate(today.getDate() + deliveryOffset);
 
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = deliveryDate.toLocaleDateString(undefined, options);
+  const Dateform = deliveryDate.toLocaleDateString(undefined, options);
 
-  alert(`Payment successful! Thank you for shopping with us.\nExpected Delivery Date: ${formattedDate}`);
+  alert(`your Payment successful! Thank you for shopping with da game plug.\nExpected Delivery Date: ${Dateform}`);
 
   localStorage.removeItem('cart');
   window.location.href = "index.html";
